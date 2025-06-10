@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aishwarya Veerabahu - Personal Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/Components/randombackground.js"></script>
+    <!-- Random background script -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+  </head>
+
+  <body class="m-0 p-0 bg-cover bg-center bg-no-repeat">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/Components/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            const headerPlaceholder =
+              document.getElementById("header-placeholder");
+            headerPlaceholder.innerHTML = data;
+
+            // Manually execute the JavaScript for the menu functionality
+            const openBtn = document.getElementById("openMenu");
+            const closeBtn = document.getElementById("closeMenu");
+            const panel = document.getElementById("menuPanel");
+            const projectsDropdown =
+              document.getElementById("projectsDropdown");
+            const projectsMenu = document.getElementById("projectsMenu");
+
+            // Open/close main menu
+            openBtn.addEventListener("click", () => {
+              panel.classList.remove("hidden");
+            });
+
+            closeBtn.addEventListener("click", () => {
+              panel.classList.add("hidden");
+            });
+          })
+          .catch((error) => console.error("Error loading header:", error));
+      });
+    </script>
+    <!-- Aishwarya's Research -->
+    <section class="mb-16 mt-16">
+      <h2
+        class="text-4xl sm:text text-yellow-200 font-bold tracking-wide mb-6 text-center"
+      >
+        Golden Oyster Mushroom Research
+      </h2>
+      <div
+        class="bg-black-100 bg-opacity-50 p-6 rounded-lg shadow-lg text-white"
+      >
+        <h3 class="text-2xl font-semibold mb-4">
+          Help Solve a Fungal Mystery!
+        </h3>
+        <p class="text-lg leading-relaxed mb-4">
+          Hi! I'm Aishwarya, a 3rd-year PhD student in the
+          <a
+            href="https://pringlelab.github.io"
+            class="underline text-yellow-300 hover:text-yellow-400"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Pringle Lab</a>
+          at UW–Madison, and I study invasive
+          <em>Pleurotus citrinopileatus</em>, also known as the golden oyster
+          mushroom. This season (April–December 2025), I'm asking fellow
+          mushroom lovers across North America to help by submitting wild golden
+          oyster specimens for a population genomics study.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-6">
+          <img
+            src="/Assets/Images/GOM1.jpg"
+            alt="Golden Oyster 1"
+            class="w-48 rounded shadow border border-gray-600 object-cover"
+          />
+          <img
+            src="/Assets/Images/GOM2.jpeg"
+            alt="Golden Oyster 2"
+            class="w-48 rounded shadow border border-gray-600 object-cover"
+          />
+          <img
+            src="/Assets/Images/GOM3.jpeg"
+            alt="Golden Oyster 3"
+            class="w-48 rounded shadow border border-gray-600 object-cover"
+          />
+        </div>
+
+        <p class="text-lg leading-relaxed mb-4">
+          I'm especially looking for mushrooms collected outside Wisconsin—from
+          places like Ontario, Texas, New York, Colorado, Alabama, and many
+          more. Observations from states where golden oysters haven’t been
+          recorded yet (like Rhode Island, Arkansas, or Maine) are especially
+          valuable.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-4">To contribute:</p>
+        <ul
+          class="list-disc list-inside mb-4 text-lg leading-relaxed space-y-2"
+        >
+          <li>Find golden oyster mushrooms growing wild (not cultivated).</li>
+          <li>
+            Take a photo (and optionally post to iNaturalist or
+            MushroomObserver).
+          </li>
+          <li>Collect 1–5 mushrooms in a brown or wax paper bag.</li>
+          <li>
+            Dehydrate if you can (1–4 hrs), or refrigerate until shipping.
+          </li>
+          <li>
+            Include collection location, substrate info, and contact details.
+          </li>
+          <li>Send to the address below (no plastic bags, please).</li>
+        </ul>
+
+        <p class="text-lg leading-relaxed mb-4">
+          I’ll be culturing these mushrooms and analyzing their DNA to
+          understand how cultivation and invasion may have shaped their
+          evolution.
+        </p>
+
+        <div class="bg-gray-900 bg-opacity-60 p-4 rounded-lg mb-4">
+          <h4 class="text-xl font-semibold mb-2">Shipping Info</h4>
+          <pre class="whitespace-pre-wrap text-base font-mono text-yellow-200">
+          PRINGLE LAB / AISHWARYA VEERABAHU
+          3240 Microbial Sciences Building
+          1550 Linden Drive
+          Madison, WI 53706
+          USA
+          </pre>
+        </div>
+
+        <p class="text-lg leading-relaxed mb-4">
+          Have questions? Reach out at
+          <a
+            href="mailto:veerabahu@wisc.edu"
+            class="underline text-yellow-300 hover:text-yellow-400"
+            >veerabahu@wisc.edu</a
+          >.
+        </p>
+
+        <p class="text-lg leading-relaxed">
+          Thank you, and happy mushroom hunting!
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/Components/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading footer:", error));
+      });
+    </script>
+  </body>
+</html>
